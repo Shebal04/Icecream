@@ -1,0 +1,19 @@
+let inventory=[];
+function add(f,p,q) {
+    inventory.push({flavor:f,price:p,quantity:q});
+}
+function calculate(){
+    let total=0;
+    for(let i=0;i<inventory.length;i++) {
+        total+=inventory[i].price*inventory[i].quantity;
+    }
+    console.log(`Total inventory value:Rs ${total.toFixed(2)}`);
+}
+let n=prompt("Enter no. of flavours:");
+for(let i=0;i<n;i++){
+    let f=prompt("Enter flavour:")
+    let p=prompt("Enter price:")
+    let q=prompt("Enter quantity:")
+    add(f,p,q);
+}
+calculate();
